@@ -1,9 +1,25 @@
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Cart from "./Card";
 import { GiHamburgerMenu } from "react-icons/gi";
 export const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const [isSidebarOpen, setSidebarOpen] = useState(false);
+  const sidebarRef = useRef();
+
+  // Close sidebar if clicked outside
+  useEffect(() => {
+    const handleDocumentClick = (event) => {
+      if (sidebarRef.current && !sidebarRef.current.contains(event.target)) {
+        setSidebarOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleDocumentClick);
+    return () => {
+      document.removeEventListener("mousedown", handleDocumentClick);
+    };
+  }, []);
 
   return (
     <>
@@ -287,12 +303,17 @@ export const Navbar = () => {
               <i className="fas fa-times" />
             </label>
             <li>
-              <a href="#">Home</a>
+              <a href={"/"}>Home</a>
             </li>
             <li>
-              <a href="#">About</a>
+              <a href="/orders">Orders</a>
             </li>
+
             <li>
+              <a href="/profile">Profile</a>
+            </li>
+
+            {/* <li>
               <a href="#" className="desktop-item">
                 Dropdown Menu
               </a>
@@ -314,7 +335,7 @@ export const Navbar = () => {
                   <a href="#">Drop menu 4</a>
                 </li>
               </ul>
-            </li>
+            </li> */}
             <li>
               <a href="#" className="desktop-item">
                 Mega Menu
