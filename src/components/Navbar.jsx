@@ -445,7 +445,7 @@ export const Navbar = () => {
                 <ul className="space-y-2 font-medium  py-[20px]">
                   <li>
                     <a
-                      href="/admin/dashboard"
+                      href={"/admin/dashboard"}
                       className="flex items-center p-2 text-gray-900 rounded-lg dark:text-black hover:bg-gray-100 dark:hover:bg-gray-200 group"
                     >
                       <MdOutlineDashboardCustomize />
@@ -455,7 +455,7 @@ export const Navbar = () => {
 
                   <li>
                     <a
-                      href="/profile"
+                      href={"/profile"}
                       className="flex items-center p-2 text-gray-900 rounded-lg dark:text-black hover:bg-gray-100 dark:hover:bg-gray-200 group"
                     >
                       <CgProfile />
