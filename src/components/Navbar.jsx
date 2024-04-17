@@ -51,7 +51,7 @@ export const Navbar = () => {
   return (
     <>
       <nav>
-        <style jsx>{`
+<style jsx>{`
           nav {
             position: fixed;
             z-index: 99;
@@ -310,13 +310,13 @@ export const Navbar = () => {
               display: block;
             }
           }
-        `}</style>
+        `}</style>        
         <Cart open={open} setOpen={setOpen}></Cart>
 
         <>
           <div className="wrapper relative">
             <div className="logo">
-              <a href={"/"}>
+              <Link href={"/"}>
                 <img
                   src={
                     "https://pinklily.com/cdn/shop/files/logo_2c756023-f61f-4cdc-aa7c-4e4a2c384766.png?v=1614306339&width=200"
@@ -324,31 +324,26 @@ export const Navbar = () => {
                   className="w-[100px]"
                   alt="logo"
                 />
-              </a>
+              </Link>
             </div>
             <ul className="nav-links">
               <label htmlFor="close-btn" className="btn close-btn">
                 <i className="fas fa-times" />
               </label>
               <li>
-                <a href={"/"}>Home</a>
+                <Link href={"/"}>Home</Link>
               </li>
               <li>
-                <Link href="/orders">
-                  <a>Orders</a>
-                </Link>
+                <Link href={"/orders"}>Orders</Link>
               </li>
 
               <li>
-                <Link href="/profile">
-                  <a>Profile</a>
-                </Link>
+                <Link href={"/profile"}>Profile</Link>
               </li>
-
               <li>
-                <a href="#" className="desktop-item">
+                <Link href="#" className="desktop-item">
                   Mega Menu
-                </a>
+                </Link>
                 <input type="checkbox" id="showMega" />
                 <label htmlFor="showMega" className="mobile-item">
                   Mega Menu
@@ -365,16 +360,16 @@ export const Navbar = () => {
                       <header>Design Services</header>
                       <ul className="mega-links">
                         <li>
-                          <a href="#">Graphics</a>
+                          <Link href="#">Graphics</Link>
                         </li>
                         <li>
-                          <a href="#">Vectors</a>
+                          <Link href="#">Vectors</Link>
                         </li>
                         <li>
-                          <a href="#">Business cards</a>
+                          <Link href="#">Business cards</Link>
                         </li>
                         <li>
-                          <a href="#">Custom logo</a>
+                          <Link href="#">Custom logo</Link>
                         </li>
                       </ul>
                     </div>
@@ -382,16 +377,16 @@ export const Navbar = () => {
                       <header>Email Services</header>
                       <ul className="mega-links">
                         <li>
-                          <a href="#">Personal Email</a>
+                          <Link href="#">Personal Email</Link>
                         </li>
                         <li>
-                          <a href="#">Business Email</a>
+                          <Link href="#">Business Email</Link>
                         </li>
                         <li>
-                          <a href="#">Mobile Email</a>
+                          <Link href="#">Mobile Email</Link>
                         </li>
                         <li>
-                          <a href="#">Web Marketing</a>
+                          <Link href="#">Web Marketing</Link>
                         </li>
                       </ul>
                     </div>
@@ -399,16 +394,16 @@ export const Navbar = () => {
                       <header>Security services</header>
                       <ul className="mega-links">
                         <li>
-                          <a href="#">Site Seal</a>
+                          <Link href="#">Site Seal</Link>
                         </li>
                         <li>
-                          <a href="#">VPS Hosting</a>
+                          <Link href="#">VPS Hosting</Link>
                         </li>
                         <li>
-                          <a href="#">Privacy Seal</a>
+                          <Link href="#">Privacy Seal</Link>
                         </li>
                         <li>
-                          <a href="#">Website design</a>
+                          <Link href="#">Website design</Link>
                         </li>
                       </ul>
                     </div>

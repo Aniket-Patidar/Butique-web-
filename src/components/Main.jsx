@@ -220,8 +220,8 @@ export default function Example() {
                       role="list"
                       className="px-2 py-3 font-medium text-gray-900"
                     >
-                      {subCategories.map((category) => (
-                        <li key={category.name}>
+                      {subCategories.map((category, i) => (
+                        <li key={i}>
                           <a href={category.href} className="block px-2 py-3">
                             {category.name}
                           </a>
@@ -229,10 +229,10 @@ export default function Example() {
                       ))}
                     </ul>
 
-                    {filters.map((section) => (
+                    {filters.map((section, i) => (
                       <Disclosure
                         as="div"
-                        key={section.id}
+                        key={i}
                         className="border-t border-gray-200 px-4 py-6"
                       >
                         {({ open }) => (
@@ -322,8 +322,8 @@ export default function Example() {
                 >
                   <Menu.Items className="absolute right-0 z-10 mt-2 w-40 origin-top-right rounded-md bg-white shadow-2xl ring-1 ring-black ring-opacity-5 focus:outline-none">
                     <div className="py-1">
-                      {sortOptions.map((option) => (
-                        <Menu.Item key={option.name}>
+                      {sortOptions.map((option, i) => (
+                        <Menu.Item key={i}>
                           {({ active }) => (
                             <a
                               href={option.href}
@@ -376,8 +376,8 @@ export default function Example() {
                   role="list"
                   className="space-y-4 border-b border-gray-200 pb-6 text-sm font-medium text-gray-900"
                 >
-                  {subCategories.map((category) => (
-                    <li key={category.name}>
+                  {subCategories.map((category, i) => (
+                    <li key={i}>
                       <a href={category.href}>{category.name}</a>
                     </li>
                   ))}
@@ -451,10 +451,10 @@ export default function Example() {
                     </h2>
 
                     <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-                      {products.map((product) => (
+                      {products.map((product,i) => (
                         <Link
                           href={"/details/1"}
-                          key={product.id}
+                          key={i}
                           className="group relative"
                         >
                           <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">

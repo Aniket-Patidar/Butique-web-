@@ -323,8 +323,8 @@ const CheckoutPage = () => {
                         <h1 className="text-4xl font-bold tracking-tight text-gray-900 p-4">
                           cart
                         </h1>
-                        {items.map((product) => (
-                          <li key={product.id} className="flex py-6">
+                        {items.map((product,i) => (
+                          <li key={i} className="flex py-6">
                             <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
                               <img
                                 src={product.product.thumbnail}

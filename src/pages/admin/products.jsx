@@ -79,11 +79,11 @@ export default function Products() {
           />
         </div>
         <div className="flex flex-wrap justify-center items-start">
-          {filteredProducts.map((product) => (
+          {filteredProducts.map((product,index) => (
             <>
               <Link href={"/product-details"}>
                 <div
-                  key={product.id}
+                  key={index}
                   className="bg-white rounded-lg shadow-md overflow-hidden w-full sm:w-72 mx-4 my-4"
                 >
                   <div className="flex justify-center items-center h-40 bg-gray-200">
