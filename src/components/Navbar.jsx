@@ -334,7 +334,7 @@ export const Navbar = () => {
                 <Link href={"/"}>Home</Link>
               </li>
               <li>
-                <Link href={"/orders"}>Orders</Link>
+                {/* <Link href={"/orders"}>Orders</Link> */}
               </li>
 
               <li>
