@@ -314,205 +314,209 @@ export const Navbar = () => {
         <Cart open={open} setOpen={setOpen}></Cart>
 
         <>
-  <div className="wrapper relative">
-    <div className="logo">
-      <a href={"/"}>
-        <img
-          src={
-            "https://pinklily.com/cdn/shop/files/logo_2c756023-f61f-4cdc-aa7c-4e4a2c384766.png?v=1614306339&width=200"
-          }
-          className="w-[100px]"
-          alt="logo"
-        />
-      </a>
-    </div>
-    <ul className="nav-links">
-      <label htmlFor="close-btn" className="btn close-btn">
-        <i className="fas fa-times" />
-      </label>
-      <li>
-        <a href={"/"}>Home</a>
-      </li>
-      <li>
-        <a href={"/orders"}>Orders</a>
-      </li>
+          <div className="wrapper relative">
+            <div className="logo">
+              <a href={"/"}>
+                <img
+                  src={
+                    "https://pinklily.com/cdn/shop/files/logo_2c756023-f61f-4cdc-aa7c-4e4a2c384766.png?v=1614306339&width=200"
+                  }
+                  className="w-[100px]"
+                  alt="logo"
+                />
+              </a>
+            </div>
+            <ul className="nav-links">
+              <label htmlFor="close-btn" className="btn close-btn">
+                <i className="fas fa-times" />
+              </label>
+              <li>
+                <a href={"/"}>Home</a>
+              </li>
+              <li>
+                <Link href="/orders">
+                  <a>Orders</a>
+                </Link>
+              </li>
 
-      <li>
-        <a href={"/profile"}>Profile</a>
-      </li>
-      <li>
-        <a href="#" className="desktop-item">
-          Mega Menu
-        </a>
-        <input type="checkbox" id="showMega" />
-        <label htmlFor="showMega" className="mobile-item">
-          Mega Menu
-        </label>
-        <div className="mega-box">
-          <div className="content">
-            <div className="row">
-              <img
-                src="https://fadzrinmadu.github.io/hosted-assets/responsive-mega-menu-and-dropdown-menu-using-only-html-and-css/img.jpg"
-                alt=""
+              <li>
+                <Link href="/profile">
+                  <a>Profile</a>
+                </Link>
+              </li>
+
+              <li>
+                <a href="#" className="desktop-item">
+                  Mega Menu
+                </a>
+                <input type="checkbox" id="showMega" />
+                <label htmlFor="showMega" className="mobile-item">
+                  Mega Menu
+                </label>
+                <div className="mega-box">
+                  <div className="content">
+                    <div className="row">
+                      <img
+                        src="https://fadzrinmadu.github.io/hosted-assets/responsive-mega-menu-and-dropdown-menu-using-only-html-and-css/img.jpg"
+                        alt=""
+                      />
+                    </div>
+                    <div className="row">
+                      <header>Design Services</header>
+                      <ul className="mega-links">
+                        <li>
+                          <a href="#">Graphics</a>
+                        </li>
+                        <li>
+                          <a href="#">Vectors</a>
+                        </li>
+                        <li>
+                          <a href="#">Business cards</a>
+                        </li>
+                        <li>
+                          <a href="#">Custom logo</a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div className="row">
+                      <header>Email Services</header>
+                      <ul className="mega-links">
+                        <li>
+                          <a href="#">Personal Email</a>
+                        </li>
+                        <li>
+                          <a href="#">Business Email</a>
+                        </li>
+                        <li>
+                          <a href="#">Mobile Email</a>
+                        </li>
+                        <li>
+                          <a href="#">Web Marketing</a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div className="row">
+                      <header>Security services</header>
+                      <ul className="mega-links">
+                        <li>
+                          <a href="#">Site Seal</a>
+                        </li>
+                        <li>
+                          <a href="#">VPS Hosting</a>
+                        </li>
+                        <li>
+                          <a href="#">Privacy Seal</a>
+                        </li>
+                        <li>
+                          <a href="#">Website design</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <a onClick={() => setOpen((e) => !e)} href="#">
+                  Cart
+                </a>
+              </li>
+            </ul>
+            <div className="md:hidden flex items-center gap-2">
+              <FaCartShopping
+                onClick={() => setOpen((e) => !e)}
+                className=""
+                size={20}
+              />
+              <GiHamburgerMenu
+                className="text-xl"
+                onClick={() => setSidebarOpen((e) => !e)}
               />
             </div>
-            <div className="row">
-              <header>Design Services</header>
-              <ul className="mega-links">
-                <li>
-                  <a href="#">Graphics</a>
-                </li>
-                <li>
-                  <a href="#">Vectors</a>
-                </li>
-                <li>
-                  <a href="#">Business cards</a>
-                </li>
-                <li>
-                  <a href="#">Custom logo</a>
-                </li>
-              </ul>
-            </div>
-            <div className="row">
-              <header>Email Services</header>
-              <ul className="mega-links">
-                <li>
-                  <a href="#">Personal Email</a>
-                </li>
-                <li>
-                  <a href="#">Business Email</a>
-                </li>
-                <li>
-                  <a href="#">Mobile Email</a>
-                </li>
-                <li>
-                  <a href="#">Web Marketing</a>
-                </li>
-              </ul>
-            </div>
-            <div className="row">
-              <header>Security services</header>
-              <ul className="mega-links">
-                <li>
-                  <a href="#">Site Seal</a>
-                </li>
-                <li>
-                  <a href="#">VPS Hosting</a>
-                </li>
-                <li>
-                  <a href="#">Privacy Seal</a>
-                </li>
-                <li>
-                  <a href="#">Website design</a>
-                </li>
-              </ul>
-            </div>
           </div>
-        </div>
-      </li>
-      <li>
-        <a onClick={() => setOpen((e) => !e)} href="#">
-          Cart
-        </a>
-      </li>
-    </ul>
-    <div className="md:hidden flex items-center gap-2">
-      <FaCartShopping
-        onClick={() => setOpen((e) => !e)}
-        className=""
-        size={20}
-      />
-      <GiHamburgerMenu
-        className="text-xl"
-        onClick={() => setSidebarOpen((e) => !e)}
-      />
-    </div>
-  </div>
-  <div className="md:hidden bg-[]">
-    <aside
-      ref={sidebarRef}
-      id="sidebar-multi-level-sidebar"
-      className={`fixed top-0 left-0 z-40 w-64 h-screen transition-transform ${
-        isSidebarOpen ? "translate-x-0" : "-translate-x-full"
-      } sm:translate-x-0`}
-      aria-label="Sidebar"
-    >
-      <div className="h-full px-3 py-4 overflow-y-auto bg-gray-50 bg-[#FEFAF6]">
-        <img
-          className="w-[120px] mx-auto"
-          src="https://pinklily.com/cdn/shop/files/logo_2c756023-f61f-4cdc-aa7c-4e4a2c384766.png?v=1614306339&width=200"
-        ></img>
-        <ul className="space-y-2 font-medium  py-[20px]">
-          <li>
-            <a
-              href="/admin/dashboard"
-              className="flex items-center p-2 text-gray-900 rounded-lg dark:text-black hover:bg-gray-100 dark:hover:bg-gray-200 group"
+          <div className="md:hidden bg-[]">
+            <aside
+              ref={sidebarRef}
+              id="sidebar-multi-level-sidebar"
+              className={`fixed top-0 left-0 z-40 w-64 h-screen transition-transform ${
+                isSidebarOpen ? "translate-x-0" : "-translate-x-full"
+              } sm:translate-x-0`}
+              aria-label="Sidebar"
             >
-              <MdOutlineDashboardCustomize />
-              <span className="ms-3">Dashboard</span>
-            </a>
-          </li>
+              <div className="h-full px-3 py-4 overflow-y-auto bg-gray-50 bg-[#FEFAF6]">
+                <img
+                  className="w-[120px] mx-auto"
+                  src="https://pinklily.com/cdn/shop/files/logo_2c756023-f61f-4cdc-aa7c-4e4a2c384766.png?v=1614306339&width=200"
+                ></img>
+                <ul className="space-y-2 font-medium  py-[20px]">
+                  <li>
+                    <a
+                      href="/admin/dashboard"
+                      className="flex items-center p-2 text-gray-900 rounded-lg dark:text-black hover:bg-gray-100 dark:hover:bg-gray-200 group"
+                    >
+                      <MdOutlineDashboardCustomize />
+                      <span className="ms-3">Dashboard</span>
+                    </a>
+                  </li>
 
-          <li>
-            <a
-              href="/profile"
-              className="flex items-center p-2 text-gray-900 rounded-lg dark:text-black hover:bg-gray-100 dark:hover:bg-gray-200 group"
-            >
-              <CgProfile />
-              <span className="ms-3">Profile</span>
-            </a>
-          </li>
+                  <li>
+                    <a
+                      href="/profile"
+                      className="flex items-center p-2 text-gray-900 rounded-lg dark:text-black hover:bg-gray-100 dark:hover:bg-gray-200 group"
+                    >
+                      <CgProfile />
+                      <span className="ms-3">Profile</span>
+                    </a>
+                  </li>
 
-          <li>
-            <a
-              href="/orders"
-              className="flex items-center p-2 text-gray-900 rounded-lg dark:text-black hover:bg-gray-100 dark:hover:bg-gray-200 group"
-            >
-              <FaCartFlatbedSuitcase />
-              <span className="ms-3">Orders</span>
-            </a>
-          </li>
+                  <li>
+                    <a
+                      href="/orders"
+                      className="flex items-center p-2 text-gray-900 rounded-lg dark:text-black hover:bg-gray-100 dark:hover:bg-gray-200 group"
+                    >
+                      <FaCartFlatbedSuitcase />
+                      <span className="ms-3">Orders</span>
+                    </a>
+                  </li>
 
-          <li>
-            <a
-              href="/about"
-              className="flex items-center p-2 text-gray-900 rounded-lg dark:text-black hover:bg-gray-100 dark:hover:bg-gray-200 group"
-            >
-              <MdOutlineRoundaboutLeft />
-              <span className="ms-3">About</span>
-            </a>
-          </li>
+                  <li>
+                    <a
+                      href="/about"
+                      className="flex items-center p-2 text-gray-900 rounded-lg dark:text-black hover:bg-gray-100 dark:hover:bg-gray-200 group"
+                    >
+                      <MdOutlineRoundaboutLeft />
+                      <span className="ms-3">About</span>
+                    </a>
+                  </li>
 
-          <li>
-            <a
-              href="/contractUs"
-              className="flex items-center p-2 text-gray-900 rounded-lg dark:text-black hover:bg-gray-100 dark:hover:bg-gray-200 group"
-            >
-              <MdOutlineLocalPhone />
-              <span className="ms-3">Contract Us</span>
-            </a>
-          </li>
+                  <li>
+                    <a
+                      href="/contractUs"
+                      className="flex items-center p-2 text-gray-900 rounded-lg dark:text-black hover:bg-gray-100 dark:hover:bg-gray-200 group"
+                    >
+                      <MdOutlineLocalPhone />
+                      <span className="ms-3">Contract Us</span>
+                    </a>
+                  </li>
 
-          <li>
-            <a
-              href="/logout"
-              className="flex items-center p-2 text-gray-900 rounded-lg dark:text-black hover:bg-gray-100 dark:hover:bg-gray-200 group"
-            >
-              <CgLogOut />
-              <span className="ms-3">Logout</span>
-            </a>
-          </li>
-        </ul>
-        <div className="absolute bottom-3 flex justify-evenly w-full">
-          <FaInstagram className="text-lg" />
-          <SlSocialTwitter className="text-lg" />
-          <CiFacebook className="text-lg" />
-        </div>
-      </div>
-    </aside>
-  </div>
-</>
-
+                  <li>
+                    <a
+                      href="/logout"
+                      className="flex items-center p-2 text-gray-900 rounded-lg dark:text-black hover:bg-gray-100 dark:hover:bg-gray-200 group"
+                    >
+                      <CgLogOut />
+                      <span className="ms-3">Logout</span>
+                    </a>
+                  </li>
+                </ul>
+                <div className="absolute bottom-3 flex justify-evenly w-full">
+                  <FaInstagram className="text-lg" />
+                  <SlSocialTwitter className="text-lg" />
+                  <CiFacebook className="text-lg" />
+                </div>
+              </div>
+            </aside>
+          </div>
+        </>
       </nav>
     </>
   );
