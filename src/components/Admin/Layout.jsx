@@ -6,7 +6,10 @@ const Layout = ({ children }) => {
   return (
     <div className="">
       <Navbar></Navbar>
-      <div className="mx-auto max-w-screen-lg py-[20px]">{children}</div>
+      <div className="flex">
+        <Sidebar></Sidebar>
+        <div className="mx-auto py-[20px]">{children}</div>
+      </div>
     </div>
   );
 };
