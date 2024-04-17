@@ -51,7 +51,7 @@ export const Navbar = () => {
   return (
     <>
       <nav>
-<style jsx>{`
+        <style jsx>{`
           nav {
             position: fixed;
             z-index: 99;
@@ -310,7 +310,7 @@ export const Navbar = () => {
               display: block;
             }
           }
-        `}</style>        
+        `}</style>
         <Cart open={open} setOpen={setOpen}></Cart>
 
         <>
@@ -326,26 +326,44 @@ export const Navbar = () => {
                 />
               </Link>
             </div>
-            <ul className="nav-links">
+            <ul className="nav-links flex gap-4 ">
               <label htmlFor="close-btn" className="btn close-btn">
                 <i className="fas fa-times" />
               </label>
               <li>
-                <Link href={"/"}>Home</Link>
+                <Link
+                  href={"/"}
+                  className="font-semibold hover:bg-blue-700 hover:text-white rounded-lg py-1.5 px-3 cursor-pointer"
+                >
+                  Home
+                </Link>
               </li>
               <li>
-                {/* <Link href={"/orders"}>Orders</Link> */}
+                <Link
+                  href={"/orders"}
+                  className="font-semibold hover:bg-blue-700 hover:text-white rounded-lg py-1.5 px-3 cursor-pointer"
+                >
+                  Orders
+                </Link>
               </li>
 
+              {/* <li>
+                <Link
+                  href={"/profile"}
+                  className="font-semibold hover:bg-blue-700 hover:text-white rounded-lg py-1.5 px-3 cursor-pointer "
+                >
+                  Profile
+                </Link>
+              </li> */}
               <li>
-                <Link href={"/profile"}>Profile</Link>
-              </li>
-              <li>
-                <Link href="#" className="desktop-item">
+                <Link
+                  href="#"
+                  className="desktop-item font-semibold hover:bg-blue-700 hover:text-white rounded-lg py-1.5 px-3 cursor-pointer"
+                >
                   Mega Menu
                 </Link>
                 <input type="checkbox" id="showMega" />
-                <label htmlFor="showMega" className="mobile-item">
+                <label htmlFor="showMega" className="mobile-item ">
                   Mega Menu
                 </label>
                 <div className="mega-box">
@@ -411,9 +429,13 @@ export const Navbar = () => {
                 </div>
               </li>
               <li>
-                <a onClick={() => setOpen((e) => !e)} href="#">
+                <span
+                  className="font-semibold hover:bg-blue-700 hover:text-white rounded-lg py-1.5 px-3 cursor-pointer"
+                  onClick={() => setOpen((e) => !e)}
+                  href="#"
+                >
                   Cart
-                </a>
+                </span>
               </li>
             </ul>
             <div className="md:hidden flex items-center gap-2">
@@ -453,7 +475,7 @@ export const Navbar = () => {
                     </a>
                   </li>
 
-                  <li>
+                  {/* <li>
                     <a
                       href={"/profile"}
                       className="flex items-center p-2 text-gray-900 rounded-lg dark:text-black hover:bg-gray-100 dark:hover:bg-gray-200 group"
@@ -461,16 +483,16 @@ export const Navbar = () => {
                       <CgProfile />
                       <span className="ms-3">Profile</span>
                     </a>
-                  </li>
+                  </li> */}
 
                   <li>
-                    {/* <a
-                      href="/orders"
+                    <a
+                      href={"/orders"}
                       className="flex items-center p-2 text-gray-900 rounded-lg dark:text-black hover:bg-gray-100 dark:hover:bg-gray-200 group"
                     >
                       <FaCartFlatbedSuitcase />
                       <span className="ms-3">Orders</span>
-                    </a> */}
+                    </a>
                   </li>
 
                   <li>
