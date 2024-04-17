@@ -7,7 +7,7 @@ const Ordersum3 = () => {
       <Navbar></Navbar>
       <div className="flex items-center justify-center pl-3  ">
         <div className="max-w-screen-lg mt-[40px]">
-          <div className=" py-14 px-5 md:px-6 2xl:px-20 2xl:container 2xl:mx-auto">
+          <div className=" py-14  mx-auto md:px-6 2xl:px-20 2xl:container 2xl:mx-auto">
             <div className="flex justify-start item-start space-y-2 flex-col ">
               <h1 className="text-2xl lg:text-3xl font-semibold leading-7 lg:leading-9  text-gray-800">
                 Order #13432
