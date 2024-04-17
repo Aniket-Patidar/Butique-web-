@@ -464,13 +464,13 @@ export const Navbar = () => {
                   </li>
 
                   <li>
-                    <a
+                    {/* <a
                       href="/orders"
                       className="flex items-center p-2 text-gray-900 rounded-lg dark:text-black hover:bg-gray-100 dark:hover:bg-gray-200 group"
                     >
                       <FaCartFlatbedSuitcase />
                       <span className="ms-3">Orders</span>
-                    </a>
+                    </a> */}
                   </li>
 
                   <li>
