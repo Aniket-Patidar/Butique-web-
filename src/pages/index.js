@@ -25,7 +25,7 @@ export default function Home() {
     <div>
       <Navbar></Navbar>
       <>
-        <div className=" h-[90vh] pt-19.5">
+        <div className=" h-[30vh] md:h-[80vh] lg:h-[100vh] pt-19.5">
           <Swiper
             spaceBetween={30}
             centeredSlides={true}
@@ -36,9 +36,9 @@ export default function Home() {
             pagination={{
               clickable: true,
             }}
-            navigation={true}
+            navigation={false}
             modules={[Autoplay, Pagination, Navigation]}
-            className="mySwiper h-full"
+            className="mySwiper  h-[30vh] md:h-[80vh] lg:h-[100vh]"
           >
             {/* Smaller Device Image for Swiper */}
             {/* <React.Fragment className="hidden">

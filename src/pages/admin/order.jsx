@@ -79,7 +79,7 @@ const Order = () => {
 
   return (
     <Layout>
-      <div className="flex items-center bg-white rounded-full shadow-md px-4 py-2">
+      <div className="flex items-center bg-white rounded-full shadow-md px-4 py-2 ">
         <RiSearchLine className="text-gray-500" />
         <input
           type="text"

@@ -2,10 +2,37 @@ import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
 import Cart from "./Card";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { CgProfile } from "react-icons/cg";
+import { MdOutlineDashboardCustomize } from "react-icons/md";
+import { FaCartFlatbedSuitcase, FaCartShopping } from "react-icons/fa6";
+import { CgLogOut } from "react-icons/cg";
+import { FaInstagram } from "react-icons/fa";
+import { SlSocialTwitter } from "react-icons/sl";
+import { CiFacebook } from "react-icons/ci";
+import { MdOutlineLocalPhone } from "react-icons/md";
+import { MdOutlineRoundaboutLeft } from "react-icons/md";
+import { IoCartOutline } from "react-icons/io5";
+
 export const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [isSidebarOpen, setSidebarOpen] = useState(false);
   const sidebarRef = useRef();
+
+  // Close sidebar if clicked outside
+  useEffect(() => {
+    const handleDocumentClick = (event) => {
+      if (sidebarRef.current && !sidebarRef.current.contains(event.target)) {
+        setSidebarOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleDocumentClick);
+    return () => {
+      document.removeEventListener("mousedown", handleDocumentClick);
+    };
+  }, []);
+
+  const [isOpen, setIsOpen] = useState(false);
 
   // Close sidebar if clicked outside
   useEffect(() => {
@@ -286,7 +313,7 @@ export const Navbar = () => {
         `}</style>
         <Cart open={open} setOpen={setOpen}></Cart>
 
-        <div className="wrapper">
+        <div className="wrapper relative">
           <div className="logo">
             <Link href={"/"}>
               <img
@@ -412,16 +439,100 @@ export const Navbar = () => {
               </a>
             </li>
           </ul>
-          <label htmlFor="menu-btn" className="btn menu-btn"></label>
-          <div className="md:hidden">
-            <GiHamburgerMenu className="text-xl" />
+          <div className="md:hidden flex items-center gap-2">
+          <FaCartShopping  onClick={() => setOpen((e) => !e)} className="" size={20} />
+            <GiHamburgerMenu
+              className="text-xl"
+              onClick={() => setSidebarOpen((e) => !e)}
+            />
           </div>
         </div>
+
+        <div className="md:hidden bg-[]">
+          <aside
+            ref={sidebarRef}
+            id="sidebar-multi-level-sidebar"
+            className={`fixed top-0 left-0 z-40 w-64 h-screen transition-transform ${
+              isSidebarOpen ? "translate-x-0" : "-translate-x-full"
+            } sm:translate-x-0`}
+            aria-label="Sidebar"
+          >
+            <div className="h-full px-3 py-4 overflow-y-auto bg-gray-50 bg-[#FEFAF6]">
+              <img
+                className="w-[120px] mx-auto"
+                src="https://pinklily.com/cdn/shop/files/logo_2c756023-f61f-4cdc-aa7c-4e4a2c384766.png?v=1614306339&width=200"
+              ></img>
+              <ul className="space-y-2 font-medium  py-[20px]">
+                <li>
+                  <Link
+                    href="/admin/dashboard"
+                    className="flex items-center p-2 text-gray-900 rounded-lg dark:text-black hover:bg-gray-100 dark:hover:bg-gray-200 group"
+                  >
+                    <MdOutlineDashboardCustomize />
+                    <span className="ms-3">Dashboard</span>
+                  </Link>
+                </li>
+
+                <li>
+                  <Link
+                    href="/profile"
+                    className="flex items-center p-2 text-gray-900 rounded-lg dark:text-black hover:bg-gray-100 dark:hover:bg-gray-200 group"
+                  >
+                    <CgProfile />
+                    <span className="ms-3">Profile</span>
+                  </Link>
+                </li>
+
+                <li>
+                  <Link
+                    href="/orders"
+                    className="flex items-center p-2 text-gray-900 rounded-lg dark:text-black hover:bg-gray-100 dark:hover:bg-gray-200 group"
+                  >
+                    <FaCartFlatbedSuitcase />
+                    <span className="ms-3">Orders</span>
+                  </Link>
+                </li>
+
+                <li>
+                  <Link
+                    href="/about"
+                    className="flex items-center p-2 text-gray-900 rounded-lg dark:text-black hover:bg-gray-100 dark:hover:bg-gray-200 group"
+                  >
+                    <MdOutlineRoundaboutLeft />
+                    <span className="ms-3">About</span>
+                  </Link>
+                </li>
+
+                <li>
+                  <Link
+                    href="/contractUs"
+                    className="flex items-center p-2 text-gray-900 rounded-lg dark:text-black hover:bg-gray-100 dark:hover:bg-gray-200 group"
+                  >
+                    <MdOutlineLocalPhone />
+                    <span className="ms-3">Contract Us</span>
+                  </Link>
+                </li>
+
+                <li>
+                  <Link
+                    href="/logout"
+                    className="flex items-center p-2 text-gray-900 rounded-lg dark:text-black hover:bg-gray-100 dark:hover:bg-gray-200 group"
+                  >
+                    <CgLogOut />
+
+                    <span className="ms-3">Logout</span>
+                  </Link>
+                </li>
+              </ul>
+              <div className="absolute bottom-3 flex justify-evenly w-full">
+                <FaInstagram className="text-lg" />
+                <SlSocialTwitter className="text-lg" />
+                <CiFacebook className="text-lg" />
+              </div>
+            </div>
+          </aside>
+        </div>
       </nav>
-      <div className="body-text">
-        <div className="title">Responsive Dropdown and Mega Menu</div>
-        <div className="sub-title">using only HTML &amp; CSS</div>
-      </div>
     </>
   );
 };

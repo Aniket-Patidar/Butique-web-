@@ -66,7 +66,7 @@ function Dashboard() {
               </div>
               <ResponsiveContainer
                 className="mt-16 mx-auto lg:w-[80%] w-full"
-                width="80%"
+                width="70%"
                 height={300}
               >
                 <BarChart
